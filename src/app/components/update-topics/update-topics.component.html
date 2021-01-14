@@ -1,0 +1,40 @@
+<p>update-topics Page</p>
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentTopic" class="edit-form">
+      <h4>Tutorial</h4>
+      <form>
+       
+        <mat-form-field class="example-full-width">
+            <mat-label>Country Name</mat-label>
+            <input matInput placeholder="Name" name="title" id="title" required
+                [(ngModel)]="currentTopic.name" />
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>Country Description</mat-label>
+            <input matInput placeholder="Region" id="description" required
+                [(ngModel)]="currentTopic.description" name="description" />
+        </mat-form-field>
+  
+        
+      </form>
+  
+     
+     
+  
+     <button (click)="deleteTopic()" mat-raised-button color="accent">
+        Delete
+      </button>
+
+      <button (click)="updateTopic()" mat-raised-button color="accent">
+        Update
+      </button>
+
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentTopic ">
+      <br />
+      <p>Cannot access this Topics...</p>
+    </div>
+  </div>

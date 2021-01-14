@@ -1,0 +1,33 @@
+<p>Add-topics Page</p>
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <!-- <div class="form-group"> -->
+            <form class="example-form">
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Enter the Country" name="title" id="title" 
+                    required [(ngModel)]="tutorial.title" />
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Description</mat-label>
+                    <input matInput placeholder="Ex. It makes me feel..." id="description" required
+                        [(ngModel)]="tutorial.description" name="description" />
+                </mat-form-field>
+
+                <div>
+                    <button (click)="saveTutorial()" mat-button color="primary">Add</button>
+                </div>
+
+                <div *ngIf="submitted">
+                    <h4>You submitted successfully!</h4>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
